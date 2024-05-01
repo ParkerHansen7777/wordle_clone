@@ -4,44 +4,81 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      
+	  <div className={styles.header}>
+		<h1>Wordle</h1>
+	  </div>
+	  
+	  <div className={styles.grid_container}>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+		<div className={styles.grid_item}></div>
+	  </div>
+	  
+	  <div className={styles.keyboard}>
+		<div className={styles.key_row}>
+			<button>Q</button>
+			<button>W</button>
+			<button>E</button>
+			<button>R</button>
+			<button>T</button>
+			<button>Y</button>
+			<button>U</button>
+			<button>I</button>
+			<button>O</button>
+			<button>P</button>
+		</div>
+		<div className={styles.key_row}>	
+			<button>A</button>
+			<button>S</button>
+			<button>D</button>
+			<button>F</button>
+			<button>G</button>
+			<button>H</button>
+			<button>J</button>
+			<button>K</button>
+			<button>L</button>
+		</div>
+		<div className={styles.key_row}>
+			<button>Enter</button>
+			<button>Z</button>
+			<button>X</button>
+			<button>C</button>
+			<button>V</button>
+			<button>B</button>
+			<button>N</button>
+			<button>M</button>
+			<button>&lt;--</button>
+		</div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        
-      </div>
     </main>
   );
 }
