@@ -1,25 +1,24 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  justify-content: space-between;
   min-height: 100vh;
-  
 }
 
 .header {
+  padding: 2rem;
   font-size: 0.95rem;
   font-family: var(--font-mono);
-  /*background-color: blue;*/
+  background-color: g;
 }
 
 .grid_container{
 	display: grid;
-	grid-template-columns: 40px 40px 40px 40px 40px;
-	grid-template-rows: 40px 40px 40px 40px 40px 40px;
+	grid-template-columns:5vh 5vh 5vh 5vh 5vh;
+	grid-template-rows: 5vh 5vh 5vh 5vh 5vh 5vh;
 	gap: 5px;
-	/*background-color: blue;*/
+	
 }
 
 .grid_item{
@@ -27,20 +26,3 @@
 	text-align: center;
 }
 
-.keyboard{
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	align-items: center;
-	/*background-color: purple;*/
-}
-
-.key_row{
-	display: flex;
-	justify-content: space-between;
-	/*background-color: red;*/
-}
-
-.key_row button{
-	/*background-color: green;*/
-}
