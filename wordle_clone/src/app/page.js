@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -6,7 +5,7 @@ export default function Home() {
     <main className={styles.main}>
       
 	  <div className={styles.header}>
-		<h1>Wordle</h1>
+		<h1>Test</h1>
 	  </div>
 	  
 	  <div className={styles.grid_container}>
