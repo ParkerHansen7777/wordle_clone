@@ -109,7 +109,7 @@ export default function App() {
   }
 
 
-  console.log(keyColors)
+  //console.log(keyColors)
 return (
     <main className='main'>
       
