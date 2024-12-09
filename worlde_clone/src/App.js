@@ -21,7 +21,7 @@ export default function App() {
   const [keyColors, setKeyColors] = useState([]);
 
 
-  console.log(word)
+  //console.log(word)
 
   const addLetter = (lets) => {
     setChar((prev) => {
