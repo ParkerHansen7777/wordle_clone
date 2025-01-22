@@ -7,22 +7,22 @@ export default function App() {
   
   const begs = [0, 5, 10, 15, 20, 25]
   const ends = [4, 9, 14, 19, 24, 29]
-  const [char, setChar] = useState(['-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-']);
+  const [char, setChar] = useState(['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']);
   const [targetIndex, setTargetIndex] = useState(0);
   const [word, setWord] = useState(word_bank[Math.floor(Math.random() * word_bank.length)]);
   const [guess, setGuess] = useState("");
-  const [colors, setColors] = useState(["grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey"])
-  const increment = () => (setTargetIndex(pIndex => pIndex + 1));
-  const decrement = () => (setTargetIndex(pIndex => pIndex - 1));
+  const [colors, setColors] = useState(["grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey"]);
   const begOfRow = begs.includes(targetIndex)
-  const endOfRow = ends.includes(targetIndex) && char[targetIndex] !== '-';
+  const endOfRow = ends.includes(targetIndex) && char[targetIndex] !== '';
   const [winner, setWinner] = useState(false);
   const [loser, setLoser] = useState(false);
   const [keyColors, setKeyColors] = useState([]);
+  const [missing, setMissing] = useState(word);
 
+  const increment = () => (setTargetIndex(pIndex => pIndex + 1));
+  const decrement = () => (setTargetIndex(pIndex => pIndex - 1));
 
-  //console.log(word)
-
+  
   const addLetter = (lets) => {
     setChar((prev) => {
       prev.splice(targetIndex, 1, lets);
@@ -42,8 +42,8 @@ export default function App() {
   const delLetter = () => {
     setChar((prev) => {
       
-      if (endOfRow) prev.splice(targetIndex, 1, '-');
-      else {prev.splice(targetIndex - 1, 1, '-')
+      if (endOfRow) prev.splice(targetIndex, 1, '');
+      else {prev.splice(targetIndex - 1, 1, '')
       decrement();
     };
       setGuess(prev2 => (prev2.slice(0, -1)))
@@ -69,23 +69,36 @@ export default function App() {
     
     else {
       if (valid_words.includes(guess)){
+        
         let k = 0;
         setColors((prev) =>{
+          setMissing(word);
           for(let i = targetIndex - 4; i <= targetIndex; i++){
-            let test = guess[k].toUpperCase()
+            let c = guess[k].toUpperCase()
+            //console.log(missing);
             if(word.includes(guess[k])){
-              if(word[k] === guess[k]) {/*green*/ prev.splice(i, 1, "green")}
-                else { /*yellow*/ prev.splice(i, 1, "yellow")}
+              
+              if(word[k] === guess[k]) {/*green*/ prev.splice(i, 1, "green"); let lets = guess[k]; setMissing(prev => (prev.replace(lets, '')));}
+              
+              else if(missing.includes(guess[k])){
+                //yellow
+                prev.splice(i, 1, "yellow")
+                
+              }
+              
+              
             }
             else{
               setKeyColors((prev) => { 
-                console.log(test)
-                prev.push(test);
+                //console.log(test)
+                prev.push(c);
                 return [...prev];
 
               })
             }
-          k++;
+          
+            k++;
+          
           }
           return [...prev]
         })
@@ -98,7 +111,7 @@ export default function App() {
   };
 
   const reset = () => {
-    setChar(['-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-']);
+    setChar(['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']);
     setTargetIndex(0);
     setWord(word_bank[Math.floor(Math.random() * word_bank.length)]);
     setGuess("")
@@ -109,7 +122,7 @@ export default function App() {
   }
 
 
-  //console.log(keyColors)
+  
 return (
     <main className='main'>
       
@@ -126,7 +139,6 @@ return (
         {char.map((letter,index)=> (
           <div className='grid_item'key={index} style={{backgroundColor: colors[index]}}>{letter}</div>
         ))}
-    
       </div>
       
       <div className='keyboard'>
