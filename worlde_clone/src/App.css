@@ -17,14 +17,17 @@
 
 .grid_container{
 	display: grid;
-	grid-template-columns:5vh 5vh 5vh 5vh 5vh;
-	grid-template-rows: 5vh 5vh 5vh 5vh 5vh 5vh;
+	grid-template-columns:10vh 10vh 10vh 10vh 10vh;
+	grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh;
 	gap: 5px;
 	
 }
 
 .grid_item{
 	border: 1px solid white;
-	text-align: center;
+	font-size: 7vh;
+  text-align: center;
+  justify-content: center;
+  color: white;
   
 }
