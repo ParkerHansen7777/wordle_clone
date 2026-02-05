@@ -12,7 +12,6 @@
   font-size: 0.95rem;
   font-family: var(--font-mono);
   color: black;
-
 }
 
 .grid_container{
@@ -20,7 +19,6 @@
 	grid-template-columns:10vh 10vh 10vh 10vh 10vh;
 	grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh;
 	gap: 5px;
-	
 }
 
 .grid_item{
@@ -29,5 +27,9 @@
   text-align: center;
   justify-content: center;
   color: white;
-  
+}
+
+.key_row{
+  display: flex;
+  flex-direction: row;
 }
