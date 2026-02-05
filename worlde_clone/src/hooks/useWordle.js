@@ -6,7 +6,7 @@ export default function useWordle(){
     const [char, setChar] = useState(['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']);
     const [colors, setColors] = useState(["grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey", "grey"]);
     const [targetIndex, setTargetIndex] = useState(0);
-    const [word, setWord] = useState(/*word_bank[Math.floor(Math.random() * word_bank.length)]*/'woven');
+    const [word, setWord] = useState(word_bank[Math.floor(Math.random() * word_bank.length)]);
     const [guess, setGuess] = useState("");
     const [keyColors, setKeyColors] = useState([]);
     const [winner, setWinner] = useState(false);
