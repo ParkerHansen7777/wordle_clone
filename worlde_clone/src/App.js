@@ -16,15 +16,26 @@ export default function App() {
   
   return (
     <main className='main'>
-      
       <div className='header'>
         <h1>Wordle Clone</h1>
+        <p className="subtitle">Guess the word in 6 tries</p>
       </div>
-      <div hidden={!loser}>
-        <>You lost, the word was {word}!</>
+      
+      {loser && (
+        <div className="status lose">
+          You lost — word was <strong>{word}</strong>
+        </div>
+      )}
+
+      {winner && (
+        <div className="status win">
+          🎉 You guessed it!
+        </div>
+      )}
+      
+      <div className="header_actions">
+        <button onClick={() => reset()}>New Word</button>
       </div>
-      <p hidden={!winner}>Winner!</p>
-      <button onClick={() => reset()}>Generate New Word</button>
       
       <Grid char={char} colors={colors} />
       

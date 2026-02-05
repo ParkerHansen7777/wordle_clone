@@ -16,19 +16,63 @@
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* ---------- HEADER ---------- */
+/* ---------- HEADER CARD ---------- */
 
 .header {
-  padding: 1rem;
+  width: 100%;
+  max-width: 420px;
+
+  padding: 1.2rem 1.5rem;
   margin-bottom: 1rem;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
   text-align: center;
+  position: relative;
 }
 
+/* divider line */
+.header::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 60%;
+  margin: 0.8rem auto 0;
+  background: rgba(0,0,0,0.15);
+}
+
+/* ---------- TITLE ---------- */
+
 .header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
   margin: 0;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* ---------- SUBTITLE ---------- */
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- HEADER ACTIONS ---------- */
+
+.header_actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* ---------- GRID ---------- */
@@ -76,7 +120,6 @@
   margin-bottom: 8px;
 }
 
-/* If your keyboard keys are buttons */
 .key_row button {
   min-width: 42px;
   height: 54px;
@@ -130,4 +173,26 @@ button:hover {
 
 button:active {
   transform: translateY(1px);
+}
+
+.status {
+  margin: 0.6rem 0;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.status.win {
+  background: #d4edda;
+  color: #1e4620;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.status.lose {
+  background: #f8d7da;
+  color: #5a1a1a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
